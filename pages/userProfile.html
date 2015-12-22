@@ -1,0 +1,22 @@
+<div ng-controller="userProfileCtrl">
+    <md-card>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Card with image</span>
+                <span class="md-subhead">Small</span>
+                <md-input-container ng-repeat="usrInfo in user.info">
+                    <label>{{usrInfo.label}}</label>
+                    <input>{{usrInfo.data}}</input>
+                </md-input-container>
+            </md-card-title-text>
+            <md-card-title-media>
+                <div class="md-media-xl card-media"></div>
+            </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button>
+                Editing done!
+            </md-button>
+        </md-card-actions>
+    </md-card>
+</div>
