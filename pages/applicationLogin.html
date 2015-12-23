@@ -1,0 +1,15 @@
+<div ng-controller="applicationLoginCtrl"
+     class="loginDiv"
+     layout-align="center center"
+     layout="column">
+    <md-input-container>
+        <label>Email</label>
+        <input ng-model="user.email">
+    </md-input-container>
+    <md-input-container>
+        <label>Password</label>
+        <input ng-model="user.pwd">
+    </md-input-container>
+    <md-button ng-click="loginClick()">Login</md-button>
+    <md-button ng-click="signupClick()">Signup</md-button>
+</div>

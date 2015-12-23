@@ -1,4 +1,4 @@
-var myApp = angular.module('XApp', ['ngMaterial']);
+var myApp = angular.module('XApp', ['ngMaterial','ngMdIcons','ngRoute']);
 
 myApp.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
@@ -11,9 +11,9 @@ myApp.config(['$routeProvider', '$locationProvider',
         templateUrl: 'pages/goodsCreation.html',
         controller: 'goodsCreationCtrl',
       })
-      .when('/userGoods', {
-        templateUrl: 'pages/userGoods.html',
-        controller: 'userGoodsCtrl',
+      .when('/availableGoods', {
+        templateUrl: 'pages/availableGoods.html',
+        controller: 'availableGoodsCtrl',
       })
       .when('/userProfile', {
         templateUrl: 'pages/userProfile.html',
@@ -23,19 +23,20 @@ myApp.config(['$routeProvider', '$locationProvider',
         templateUrl: 'pages/applicationMain.html',
         controller: 'applicationMainCtrl',
        })
-      .when('/applicationGoods', {
-        templateUrl: 'pages/applicationGoods.html',
-        controller: 'applicationGoodsCtrl',
+       .when('/applicationLogin', {
+         templateUrl: 'pages/applicationLogin.html',
+         controller: 'applicationLoginCtrl',
        })
-
-    $locationProvider.html5Mode(true);
 }])
 
-myApp.controller('loginCtrl', ['$scope', '$location' function($scope) {
+myApp.controller('appCtrl', ['$scope', '$location', function($scope, $location) {
 $scope.user = {};
 $scope.user.email = '';
 $scope.user.pwd = '';
 
+$scope.moveLoginPage = function(){
+$location.path('/applicationLogin');
+};
 
 $scope.loginClick = function(){
 console.log('login clicked!!');

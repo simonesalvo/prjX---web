@@ -1,19 +1,29 @@
 <div ng-controller="userGoodsCtrl">
     Feedback
     <md-content class="md-padding">
-        <md-tabs class="md-accent" md-stretch-tabs="always"
+        <md-tabs class="md-accent"
+                 md-stretch-tabs="always"
                  md-swipe-content="true"
                  md-center-tabs="true"
-                 md-selected="data.selectedIndex"
                  md-align-tabs="top">
             <md-tab>
                 <md-tab-label>Received</md-tab-label>
                 <md-tab-body>
+                    <md-list>
+                        <md-list-item ng-repeat="f in receivedFeedback">
+
+                        </md-list-item>
+                    </md-list>
                 </md-tab-body>
             </md-tab>
             <md-tab>
                 <md-tab-label>Given</md-tab-label>
                 <md-tab-body>
+                    <md-list>
+                        <md-list-item ng-repeat="f in givenFeedback">
+
+                        </md-list-item>
+                    </md-list>
                 </md-tab-body>
             </md-tab>
         </md-tabs>
