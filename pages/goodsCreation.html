@@ -1,40 +1,41 @@
-<div layout ="column" ng-controller="goodsCreationCtrl" flex>
-    <md-content class="autoScroll">
-        <md-input-container md-no-float class="md-block">
-            <!-- Use floating label instead of placeholder -->
-            <ng-md-icon icon="person" ></ng-md-icon >
-            <input ng-model="user.name" type="text" placeholder="Name"  ng-required="true">
-        </md-input-container>
-        <md-input-container md-no-float class="md-block">
-            <ng-md-icon icon="phone" ></ng-md-icon >
-            <input ng-model="user.phone" type="text" placeholder="Phone Number"  ng-required="true">
-        </md-input-container>
-        <md-input-container md-no-float  class="md-block">
-            <ng-md-icon icon="email" ></ng-md-icon >
-            <input ng-model="user.email" type="email" placeholder="Email" ng-required="true">
-        </md-input-container>
-        <md-input-container md-no-float class="md-block">
-        <ng-md-icon icon="place" ></ng-md-icon >
-        <input ng-model="user.address" type="text" placeholder="Address"  ng-required="true">
-    </md-input-container>
-        <md-input-container md-no-float class="md-block">
-            <ng-md-icon icon="receipt" ></ng-md-icon >
-            <input ng-model="good.description" type="text" placeholder="A short description">
-        </md-input-container>
+<div id="goodsCreationDiv" layout="row" layout-align="center center" >
+    <div flex></div>
+    <div layout-align="center center" layout="column">
+            <aps-upload-file></aps-upload-file>
+        <img ng-src="{{imageSrc}}" />
+    </div>
+    <div flex></div>
 
-        <div style="visibility:hidden;">
+    <div layout-align="center center" layout="column" ng-controller="goodsCreationCtrl" >
+        <md-content class="autoScroll">
+            <md-input-container md-no-float class="md-block">
+                <!-- Use floating label instead of placeholder -->
+                <ng-md-icon icon="person" ></ng-md-icon >
+                <input ng-model="user.name" type="text" placeholder="Name"  ng-required="true">
+            </md-input-container>
+            <md-input-container md-no-float class="md-block">
+                <ng-md-icon icon="phone" ></ng-md-icon >
+                <input ng-model="user.phone" type="text" placeholder="Phone Number"  ng-required="true">
+            </md-input-container>
+            <md-input-container md-no-float  class="md-block">
+                <ng-md-icon icon="email" ></ng-md-icon >
+                <input ng-model="user.email" type="email" placeholder="Email" ng-required="true">
+            </md-input-container>
+            <md-input-container md-no-float class="md-block">
+            <ng-md-icon icon="place" ></ng-md-icon >
+            <input ng-model="user.address" type="text" placeholder="Address"  ng-required="true">
+        </md-input-container>
+            <md-input-container md-no-float class="md-block">
+                <ng-md-icon icon="receipt" ></ng-md-icon >
+                <input ng-model="good.description" type="text" placeholder="A short description">
+            </md-input-container>
+
             <md-input-container md-no-float class="md-block">
                 <ng-md-icon icon="note_add" ></ng-md-icon >
                 <input ng-model="good.notes" type="text" placeholder="Further notes">
             </md-input-container>
-        </div>
-    </md-content>
-    <div >
-<md-button class="md-fab">
-    <ng-md-icon layout-align="center center" icon="add_circle" ></ng-md-icon >
-</md-button>
-        <aps-upload-file></aps-upload-file>
-        <img ng-src="{{imageSrc}}" /><br/>
+        </md-content>
     </div>
+    <div flex></div>
 
 </div>

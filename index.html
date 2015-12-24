@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
     <link rel="stylesheet" href="css/css.css">
 
+    <meta name="viewport" content="width=device-width; height=device-height">
     <meta charset="UTF-8">
     <title>PrjX</title>
 </head>
@@ -14,7 +15,7 @@
 <!--
   Your HTML content here
 -->
-<div ng-view></div>
+<div id="mainDiv" layout="column" ng-view style="height:100%;"></div>
 
 <!-- Angular Material requires Angular.js Libraries -->
 <script src="http://code.angularjs.org/1.2.13/angular-route.js"></script>

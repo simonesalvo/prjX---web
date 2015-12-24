@@ -20,12 +20,24 @@ myApp.directive('apsUploadFile', apsUploadFile);
 
       function apsUploadFile() {
         var directive = {
-          restrict: 'E',
-          template: '<input id="fileInput" type="file" class="ng-hide"> <md-button id="uploadButton" class="md-raised md-primary" aria-label="attach_file">    Choose file </md-button><md-input-container  md-no-float>    <input id="textInput" ng-model="fileName" type="text" placeholder="No file chosen" ng-readonly="true"></md-input-container>',
+          restrict: '',
+          templateUrl: '../web/pages/templates/uploadFile.html',
           link: apsUploadFileLink
         };
         return directive;
       }
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#loadImageImg').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 
       function apsUploadFileLink(scope, element, attrs) {
         var input = $(element[0].querySelector('#fileInput'));
@@ -49,5 +61,6 @@ myApp.directive('apsUploadFile', apsUploadFile);
             scope.fileName = null;
           }
           scope.$apply();
+          readURL(e.target);
         });
       }
